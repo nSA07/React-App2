@@ -1,0 +1,12 @@
+{
+  "name": "react-app2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "docker:up": "docker compose -f ./server/docker-compose.yml up -d",
+    "docker:down": "docker compose -f ./server/docker-compose.yml down"
+  },
+  "author": "",
+  "license": "ISC"
+}
