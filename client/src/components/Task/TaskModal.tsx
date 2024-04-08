@@ -7,7 +7,7 @@ import {
 import { Eye, Tag, Crosshair, CalendarIcon  } from "lucide-react"
 
 import { IHistory } from "@/types/types";
-import { typeFunction } from "@/components/History/History";
+import { History } from "@/components/History/History";
 import { ScrollArea } from "@radix-ui/react-scroll-area";
 import { useState } from "react";
 import { PopoverTaskMenu } from "./PopoverTaskMenu";
@@ -18,7 +18,7 @@ export const TaskModal = ({id, boardName, historyById, title, description, prior
     function historyItem (item: IHistory) {
         item?.map(({ changes }) => {
             changes?.map(({field, prev, next, taskName, dueData}) => {                
-                data.push({title: typeFunction[field](prev, next, taskName, dueData)});
+                data.push({field, prev, next, taskName, dueData});
             })
         });
     }    
@@ -74,7 +74,9 @@ export const TaskModal = ({id, boardName, historyById, title, description, prior
                         <span className="text-xl font-bold">Activity</span>
                         <ScrollArea className="w-full h-full p-4">
                             <ul className="p-2 flex flex-col gap-3">
-                                {data?.map((item) => (item.title))}
+                                {data?.map((item) => (
+                                    <History key={item.field} type={item.field} prev={item.prev} next={item.next} taskName={item.taskName} dueData={item.dueData} />
+                                ))}
                             </ul>
                         </ScrollArea>
                     </div>

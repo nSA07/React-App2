@@ -9,7 +9,9 @@
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "test": "jest"
+    "test": "jest",
+    "docker:up": "docker compose -f ./client/docker-compose.yml up -d",
+    "docker:down": "docker compose -f docker-compose.yml down"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
@@ -26,6 +28,7 @@
     "clsx": "^2.1.0",
     "date-fns": "^3.6.0",
     "localforage": "^1.10.0",
+    "lodash": "^4.17.21",
     "lucide-react": "^0.363.0",
     "match-sorter": "^6.3.4",
     "prettier": "^3.2.5",

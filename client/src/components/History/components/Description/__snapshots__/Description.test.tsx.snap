@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Description /> should render el with data-testid="type-added" 1`] = `
+<li
+  class="text-slate-500 text-xs flex flex-col gap-2"
+  data-testid="type-description"
+>
+  <div
+    class="text-slate-500 text-xs flex gap-1 items-center flex-wrap"
+  >
+    <svg
+      class="lucide lucide-dot "
+      fill="none"
+      height="16"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="16"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        cx="12.1"
+        cy="12.1"
+        r="1"
+      />
+    </svg>
+    You changed description 
+    <svg
+      class="lucide lucide-disc2 "
+      fill="none"
+      height="10"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="4"
+      viewBox="0 0 24 24"
+      width="10"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        cx="12"
+        cy="12"
+        r="10"
+      />
+      <circle
+        cx="12"
+        cy="12"
+        r="4"
+      />
+      <path
+        d="M12 12h.01"
+      />
+    </svg>
+     
+    <span
+      class="font-bold"
+    >
+      taskName
+    </span>
+     from 
+    <span
+      class="font-medium"
+    >
+      prev
+    </span>
+     to 
+    <span
+      class="font-medium"
+    >
+      next
+    </span>
+  </div>
+  <span
+    class="pl-5 italic"
+  >
+    Jan 1, 12:00 AM
+  </span>
+</li>
+`;

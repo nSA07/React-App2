@@ -1,7 +1,6 @@
-import { FC } from "react"
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
-import { useLocation } from "react-router-dom";
-import { useAddListMutation, useGetListsQuery } from "@/redux";
+import { useLocation, useNavigate   } from "react-router-dom";
+import { useAddListMutation, useGetListsQuery, useGetBoardsQuery } from "@/redux";
 import { IBoardList } from "@/types/types";
 import { Lists } from "@/components/Lists/Lists";
 import { PopoverMenu } from "@/components/SideBar/PopoverMenu";
@@ -9,12 +8,23 @@ import { Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 import { HeaderBoard } from "@/components/Header/HeaderBoard";
+import { isEmpty } from "lodash";
+import { FC, useEffect } from "react";
 
 export const Boards: FC = () => {
   const { state } = useLocation();
+  const navigate = useNavigate();
   const { data: lists } = useGetListsQuery(`/lists/${state.boardID}`);
+  const { data: boardList } = useGetBoardsQuery("boards");
   const [ addBoard ] = useAddListMutation();
   const { toast } = useToast()
+  
+  useEffect(() => {
+    if (isEmpty(boardList)) {
+      navigate("/");
+    }
+  }, [boardList]);
+  
   
   const addNewList = async (values: {boardName: string}, form: { reset: () => void; }, setOpen: (arg0: boolean) => void) => {
     try {

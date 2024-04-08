@@ -52,3 +52,10 @@ export interface IHistory {
   timestamp: Date;
   stringValues: IHistoryValue[];
 }
+
+export interface IHistoryItem {
+  prev: string;
+  next: string;
+  taskName: string;
+  dueData: string;
+}

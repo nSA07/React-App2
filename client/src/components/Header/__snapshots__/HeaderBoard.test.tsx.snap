@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderBoard Header board render 1`] = `
+<h1>
+  Didik
+</h1>
+`;

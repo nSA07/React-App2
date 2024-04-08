@@ -1,0 +1,21 @@
+# Use postgres/example user/password credentials
+version: '3.5'
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: vite-frontend
+    environment:
+      -VITE_PORT: ${VITE_PORT:-http://localhost:3030}
+    ports:
+      - '5173:5173'
+    networks:
+      - nest_app
+    volumes:
+      - ./src:/app/src
+
+networks:
+  nest_app:
+    driver: bridge

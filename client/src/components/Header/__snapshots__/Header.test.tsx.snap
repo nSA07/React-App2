@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render <Header/> component 1`] = `
+<header
+  class="p-4 border-b"
+>
+  <h1
+    class="font-extrabold text-xl md:text-2xl"
+  >
+    My Task Board
+  </h1>
+</header>
+`;

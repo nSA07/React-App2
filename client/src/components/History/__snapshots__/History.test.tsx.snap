@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<History /> History component should render Added Component 1`] = `
+<h1>
+  Added
+</h1>
+`;
+
+exports[`<History /> History component should render Added Component 2`] = `
+<h1>
+  Title
+</h1>
+`;
+
+exports[`<History /> History component should render Added Component 3`] = `
+<h1>
+  Priority
+</h1>
+`;
+
+exports[`<History /> History component should render Added Component 4`] = `
+<h1>
+  List
+</h1>
+`;
+
+exports[`<History /> History component should render Added Component 5`] = `
+<h1>
+  Remove
+</h1>
+`;
+
+exports[`<History /> History component should render List Component 1`] = `
+<h1>
+  List
+</h1>
+`;
+
+exports[`<History /> History component should render Priority Component 1`] = `
+<h1>
+  Priority
+</h1>
+`;
+
+exports[`<History /> History component should render Remove Component 1`] = `
+<h1>
+  Remove
+</h1>
+`;
+
+exports[`<History /> History component should render Title Component 1`] = `
+<h1>
+  Title
+</h1>
+`;

@@ -9,21 +9,22 @@ import { ScrollArea } from "@/components/ui/scroll-area"
 
 import { RotateCcw  } from 'lucide-react'
 import { IHistory } from "@/types/types";
-import { typeFunction } from "@/components/History/History";
+import { History } from "@/components/History/History";
 
-export const HeaderSideBar = ({history}) => {     
+export const HeaderSideBar = ({history}) => {  
+           
     const data = [];
     function historyItem (item: IHistory) {
         item?.map(({ changes }) => {           
-            changes?.map(({field, prev, next, taskName, dueData}) => {   
-                             
-                data.push({title: typeFunction[field](prev, next, taskName, dueData)});
+            changes?.map(({field, prev, next, taskName, dueData}) => { 
+
+                data.push({field, prev, next, taskName, dueData})
             })
         });
     }
     
     historyItem(history);    
-    
+
     return (
         <Sheet>
             <SheetTrigger asChild>
@@ -36,7 +37,9 @@ export const HeaderSideBar = ({history}) => {
                 <SheetTitle>Історія</SheetTitle>
                 <ScrollArea className="w-full h-lvh rounded-md border p-4">
                     <ul className="p-2 flex flex-col gap-3">
-                        {data?.map((item) => (item.title))}
+                        {data?.map((item) => (
+                            <History key={item.field} type={item.field} prev={item.prev} next={item.next} taskName={item.taskName} dueData={item.dueData} />
+                        ))}
                     </ul>
                 </ScrollArea>
             </SheetContent>
