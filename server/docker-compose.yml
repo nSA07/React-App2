@@ -15,22 +15,30 @@ services:
     ports:
       - "${DB_PORT:-5432}:5432"
     networks:
-      - postgres
+      - nest_app
     restart: unless-stopped
-  app:
+  server:
     build:
       context: .
       dockerfile: Dockerfile
     container_name: nest_server
     environment:
-      - PORT=${PORT}
+      DB_HOST: ${PORT:-postgres_container}
+      DB_PORT: ${DB_PORT:-5432}:5432}
+      DB_USERNAME: ${DB_USERNAME:-'postgres'}
+      DB_PASSWORD: ${DB_PASSWORD:-'123456'}
+      DB_NAME: ${DB_NAME:-'postgres'}
+    depends_on:
+      - postgres
     ports:
       - '3030:3030'
+    networks:
+      - nest_app
     volumes:
       - ./src:/app/src
 
 networks:
-  postgres:
+  nest_app:
     driver: bridge
 
 volumes:
